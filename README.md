@@ -1,5 +1,7 @@
 # IC-705 ↔ Xiegu XPA125B via TTGO Bluetooth-Bridge
 
+![Fertiges Modul auf der XPA125B](images/photo_titelbild_montiert.webp)
+
 Ein LilyGO **TTGO T-Display v1.1** (ESP32) verbindet sich per **Bluetooth
 Classic (CI-V-over-SPP)** mit einem Icom **IC-705** und steuert darüber eine
 nachgeschaltete Xiegu **XPA125B**-Endstufe (100 W HF-Verstärker) vollautomatisch:
@@ -55,6 +57,12 @@ Uhrzeit/UTC, Tune-Sequenz mit FB/NG-Bestätigung, ALC-Auslesung samt
 Schutzschaltung, das komplette PMR-171-BLE-Modul, die Daughterboard-Platine) ist
 eigene Arbeit dieses Projekts.
 
+## Fotos
+
+| Rückseite (fertiges Modul) | Draufsicht (fertiges Modul) | Innenansicht |
+|---|---|---|
+| ![Rückseite des fertigen Moduls](images/photo_modul_rueckseite.webp) | ![Draufsicht des fertigen Moduls](images/photo_modul_draufsicht.webp) | ![Innenansicht des fertigen Moduls](images/photo_modul_innenansicht.webp) |
+
 ## Hardware
 
 ### Übersicht
@@ -93,7 +101,9 @@ RC-Filter für die Bandspannung.
   JLCPCB-Bestellanleitung
 - **`hardware/kicad/`** – fertig geroutetes KiCad-Projekt (DRC-geprüft)
 - **`hardware/gerber/`** – Gerber + BOM + CPL, fertig für den JLCPCB-Upload
-- **`images/`** – Renderansichten des bestückten Boards
+- **`images/`** – Renderansichten sowie reale Fotos des bestückten Boards
+
+![Daughterboard: Vorder- und Rückseite](images/photo_daughterboard_vorne_hinten.webp)
 
 Die im finalen PCB-Entwurf verwendete PTT-Schaltung (N-MOSFET gegen GND) ist
 eine bewusste, im Prototyp **nicht** getestete Vereinfachung gegenüber dem
@@ -164,9 +174,11 @@ Getestet mit Arduino-ESP32-Core 3.3.11.
 - **Optokoppler-Prototyp (frei verdrahtet):** live an der echten XPA125B
   verifiziert – Bandumschaltung, PTT, Tune-Sequenz, ALC-Auslesung und die
   Schutzschaltung wurden alle mit echter Hardware getestet.
-- **SMD-Daughterboard (MOSFET-Variante):** Design fertiggestellt und bei JLCPCB
-  bestellt/gefertigt – die PTT-Schaltung dieser Variante selbst ist noch nicht
-  am realen Gerät gegengetestet (siehe `hardware/DESIGN.md`).
+- **SMD-Daughterboard (MOSFET-Variante):** gefertigt, bestückt und am realen
+  Gerät montiert (siehe Fotos oben) – zeigt live Frequenz/Modus/RX-Status vom
+  705. Die PTT-Schaltung dieser Variante ist damit im Aufbau bestätigt; ein
+  vollständiger, ausführlicher Sende-Test steht als Nächstes an (siehe
+  `hardware/DESIGN.md`).
 - **ALC-Schutzschaltung:** live getestet in FM (Kollapspunkt sauber erkannt)
   und SSB (vierstufige automatische Rückregelungs-Kaskade beobachtet, hat einen
   drohenden PA-Fehlerabschaltung erfolgreich verhindert).
