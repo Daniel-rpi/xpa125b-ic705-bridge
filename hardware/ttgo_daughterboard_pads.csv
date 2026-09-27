@@ -1,0 +1,25 @@
+eagle_pad,pin,reihe,eagle_x_mm,eagle_y_mm,board_x_mm,board_y_mm,netz,hinweis
+3V3_0,3V3_0,links,1.11,16.01,1.11,2.00,3V3,MIT SCHALTUNG VERBUNDEN
+GND_3,GND_3,links,1.11,18.55,1.11,4.54,,nur Loetauge (kein Netz)
+GND_2,GND_2,links,1.11,21.09,1.11,7.08,,nur Loetauge (kein Netz)
+12-G12-A15,GPIO12,links,1.11,23.63,1.11,9.62,,nur Loetauge (kein Netz)
+13-G13-A14,GPIO13,links,1.11,26.17,1.11,12.16,,nur Loetauge (kein Netz)
+15-G15-A13,GPIO15,links,1.11,28.71,1.11,14.70,,nur Loetauge (kein Netz)
+2-G2-A12,GPIO2,links,1.11,31.25,1.11,17.24,,nur Loetauge (kein Netz)
+17-DIONLY,GPIO17,links,1.11,33.79,1.11,19.78,,nur Loetauge (kein Netz)
+22-SCL,GPIO22,links,1.11,36.33,1.11,22.32,,nur Loetauge (kein Netz)
+21-SDA,GPIO21,links,1.11,38.87,1.11,24.86,,nur Loetauge (kein Netz)
+GND_1,GND_1,links,1.11,41.41,1.11,27.40,,nur Loetauge (kein Netz)
+GND_0,GND_0,links,1.11,43.95,1.11,29.94,,nur Loetauge (kein Netz)
+5V,5V,rechts,23.97,16.01,23.97,2.00,,NICHT VERBINDEN (5 V vom TTGO/USB)
+GND_4,GND_4,rechts,23.97,18.55,23.97,4.54,GND,MIT SCHALTUNG VERBUNDEN
+27-G27-A17,GPIO27,rechts,23.97,21.09,23.97,7.08,G27,MIT SCHALTUNG VERBUNDEN
+26-G26-A19-DAC2,GPIO26,rechts,23.97,23.63,23.97,9.62,G26,MIT SCHALTUNG VERBUNDEN
+25-G25-A18-DAC1,GPIO25,rechts,23.97,26.17,23.97,12.16,,nur Loetauge (kein Netz)
+33-G33-A5,GPIO33,rechts,23.97,28.71,23.97,14.70,,nur Loetauge (kein Netz)
+32-G32-A4,GPIO32,rechts,23.97,31.25,23.97,17.24,,nur Loetauge (kein Netz)
+SVN-G39-A3,GPIO39,rechts,23.97,33.79,23.97,19.78,,nur Loetauge (kein Netz)
+38-G38,GPIO38,rechts,23.97,36.33,23.97,22.32,,nur Loetauge (kein Netz)
+37-G37,GPIO37,rechts,23.97,38.87,23.97,24.86,,nur Loetauge (kein Netz)
+SVP-G36-A0,GPIO36,rechts,23.97,41.41,23.97,27.40,,nur Loetauge (kein Netz)
+3V3_1,3V3_1,rechts,23.97,43.95,23.97,29.94,,nur Loetauge (kein Netz)
