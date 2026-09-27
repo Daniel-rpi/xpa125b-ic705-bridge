@@ -667,6 +667,12 @@ void toggleDisplay() {
 // Nutzt die bereits gebondete MAC-Adresse direkt statt einer namens-
 // basierten Suche - letztere wuerde eine frische Sichtbarkeit des 705
 // voraussetzen (Inquiry-Scan), die im Normalbetrieb nicht gegeben ist.
+// KEINE feste MAC im Code: getBondedDevices() liest zur Laufzeit aus der
+// ESP32-eigenen Bonding-Tabelle (im Flash des jeweiligen Boards, per
+// Bluetooth-Pairing selbst angelegt) - dieser Sketch enthaelt/veroeffentlicht
+// dadurch keine MAC-Adresse irgendeines Funkgeraets. Nach dem eigenen
+// Flashen einmalig am 705 selbst koppeln (Bluetooth-Menue), danach reicht
+// dieser lange Tastendruck fuer einen aktiven Reconnect.
 void reconnectToRadio() {
   Serial.printf("[%lums] reconnectToRadio() aufgerufen\n", millis());
   esp_bd_addr_t bondedDevices[5];
