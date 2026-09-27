@@ -74,17 +74,32 @@ IC-705 ──(Bluetooth Classic, CI-V-over-SPP)──> TTGO T-Display v1.1 (ESP3
                                                      │  GPIO36 (ADC, über 220Ω ← ALC-Ausgang, Pin 4)
                                                      ▼
                                         Xiegu XPA125B – ACC-Buchse (6-pol. Mini-DIN)
-                                        Pin 1 = +12…14,5V (Versorgung der Platine)
+                                        Pin 1 = +12…14,5V (Versorgung der Platine) ⚠️ siehe unten
                                         Pin 2 = PTT (≥3,2V = Prozessorschaden!)
                                         Pin 3 = Bandspannung
                                         Pin 4 = ALC-Ausgang (~1–4V, invertiert)
                                         Pin 6 = GND
 ```
 
-Das TTGO bezieht seine eigene 3,3-V-Versorgung direkt aus der ACC-Pin-1-Spannung
-der PA (isolierter DC/DC-Wandler bzw. Buck-Regler auf dem Daughterboard, siehe
-`hardware/`) – **kein separates USB-Netzteil nötig, aber USB und PA-Strom dürfen
-nicht gleichzeitig anliegen** (kein Akku auf der Platine, zwei Spannungsquellen
+> **⚠️ ACC-Pin 1 ist im offiziellen Xiegu-Handbuch als N/C (nicht belegt)
+> dokumentiert – liegt bei unserem (unmodifizierten, werksseitigen) Exemplar
+> aber real die volle Versorgungsspannung der PA an** (gemessen ~12,85 V bei
+> eingeschalteter PA am Netzteil, skaliert entsprechend mit der extern
+> angelegten 12–14,5 V-Spannung). Genau das macht die eigene Stromversorgung
+> des TTGO über die ACC-Buchse erst möglich, ohne ein zweites Netzteil oder
+> einen Eingriff in die PA. Diese Diskrepanz zwischen Handbuch und Realität hat
+> uns selbst lange beschäftigt (mehrere Diskussionsrunden, bis wir es am Ende
+> direkt mit dem Multimeter durchgemessen haben) – **vor dem Nachbau unbedingt
+> selbst am eigenen Gerät nachmessen**, statt sich auf das Handbuch *oder*
+> diese Notiz zu verlassen. Xiegu könnte diese Pinbelegung in einer anderen
+> Fertigungscharge/Hardwarerevision jederzeit ändern, ohne das zu
+> dokumentieren – schließlich war sie nie offiziell zugesichert.
+
+Das TTGO bezieht seine eigene 3,3-V-Versorgung direkt aus dieser
+(inoffiziellen, aber real anliegenden) ACC-Pin-1-Spannung der PA (isolierter
+DC/DC-Wandler bzw. Buck-Regler auf dem Daughterboard, siehe `hardware/`) –
+**kein separates USB-Netzteil nötig, aber USB und PA-Strom dürfen nicht
+gleichzeitig anliegen** (kein Akku auf der Platine, zwei Spannungsquellen
 würden sich gegenseitig stören).
 
 ### Eigene SMD-Platine (Daughterboard)

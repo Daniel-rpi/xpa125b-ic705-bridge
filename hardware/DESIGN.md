@@ -51,9 +51,21 @@ einmalige Ladegebühr (ca. 3 USD pro Bestückungsauftrag) – im Warenkorb prüf
 (11.392 bzw. 548.730 Stk.), also keine Sonderbestellware im Sinne von „nicht lieferbar".
 Kostenfreie Alternative: keine gefunden, die auch flach ist (LDO = Hitzeproblem, siehe oben).
 
+## ⚠️ ACC-Pin 1 ist im Handbuch als N/C dokumentiert, führt aber real Spannung
+Das offizielle Xiegu-Handbuch listet ACC-Pin 1 der XPA125B als nicht belegt
+(N/C). An unserem werksseitigen, unmodifizierten Exemplar liegt dort trotzdem
+**real die Versorgungsspannung der PA an** (gemessen ~12,85 V bei
+angeschlossenem Netzteil, skaliert mit dessen 12–14,5 V) - genau darauf baut
+die gesamte Stromversorgung dieser Platine auf (`+12V_RAW` unten). Das war
+kein Zufallsfund, sondern das Ergebnis einer längeren Diskussion und
+letztlich einer direkten Multimeter-Messung. **Vor dem Nachbau am eigenen
+Gerät selbst nachmessen** - eine andere Fertigungscharge/Hardwarerevision
+könnte das jederzeit anders handhaben, da diese Belegung von Xiegu nie
+zugesichert wurde.
+
 ## Schaltplan (Netzliste)
-Netze: `+12V_RAW` (ACC-Pin 1), `+12V` (hinter D1), `3V3`, `GND`, `SW`, `BST`, `PTT` (ACC-Pin 2), `BAND` (ACC-Pin 3),
-`G26`, `G27`, `GATE`.
+Netze: `+12V_RAW` (ACC-Pin 1, laut Handbuch N/C - siehe Warnhinweis oben), `+12V` (hinter D1), `3V3`, `GND`,
+`SW`, `BST`, `PTT` (ACC-Pin 2), `BAND` (ACC-Pin 3), `G26`, `G27`, `GATE`.
 
 | Bauteil | Anschlüsse |
 |---|---|
